@@ -1,0 +1,64 @@
+clone vs pull
+==================
+clone = one-time operation to download the repo.
+
+pull = ongoing operation to sync your local repo with remote updates.
+==================
+
+Basic Clone
+	# Clone into a custom folder
+	git clone https://github.com/user/repo.git [my-folder]
+Clone via SSH (instead of HTTPS)
+	git clone git@github.com:user/repo.git
+
+Clone a Specific Branch
+	# Clone a branch into a custom folder
+	git clone --branch branch_name https://github.com/user/repo.git [my-folder]
+
+Shallow Clone (Faster, Smaller Download)
+	# Clone only the latest commit
+	git clone --depth 1 https://github.com/user/repo.git
+	# Clone the latest 5 commits
+	git clone --depth 5 https://github.com/user/repo.git
+Mirror Clone (for backups/migration)
+	# Clones everything including remote refs
+	git clone --mirror https://github.com/user/repo.git
+Bare Clone (no working directory, only repo data)===>Used for creating server-side repositories.
+	git clone --bare https://github.com/user/repo.git
+
+=========================
+summary
+=========================
+So in short:
+
+	Normal clone → for development.
+	Branch clone → work only on one branch.
+	Shallow clone → save time/disk space.
+	Bare/mirror clone → repo hosting or backup.
+=======================================================================
+
+pull commands:
+==================
+Basic Pull
+	#Updates your current branch with the corresponding remote branch
+	git pull
+
+# Pull from origin’s main branch into your current branch
+git pull origin main
+
+# Pull from another remote
+git pull upstream develop
+# Rebase instead of merge (avoids extra merge commits)
+git pull --rebase
+
+# From a specific branch with rebase
+git pull --rebase origin main
+# Just fetch, don’t merge (useful for inspection)
+git fetch origin main
+#Updates your local repo from all remotes.
+git pull --all
+===============Handle Conflicts During Pull==============
+# If a merge conflict happens:
+git pull --abort    # Cancel the pull
+
+

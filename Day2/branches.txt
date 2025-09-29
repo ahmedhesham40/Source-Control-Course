@@ -1,0 +1,58 @@
+Branch Basics
+=================
+# List all branches (local)
+git branch
+
+# List all branches (local + remote)
+git branch -a
+
+# Create a new branch (but stay on current one)
+git branch <branch_name>
+
+# Switch to a branch (Git 2.23+)
+git switch <branch_name>
+
+# Older way to switch branches
+git checkout <branch_name>
+
+# Create and switch to a new branch
+git switch -c <branch_name>
+# or
+git checkout -b <branch_name>
+===================
+Branch Management
+====================
+# Rename current branch
+git branch -m <new_name>
+
+# Delete a branch (only if fully merged)
+git branch -d <branch_name>
+
+# Force delete branch (even if not merged)
+git branch -D <branch_name>
+
+
+======================
+Remote Branches
+======================
+# Push branch to remote
+git push origin <branch_name>
+
+# Track a remote branch locally
+git checkout -b <branch_name> origin/<branch_name>
+
+# Delete a remote branch
+git push origin --delete <branch_name>
+
+# Fetch all remote branches
+git fetch --all
+
+==================
+# See last commit on each branch
+git branch -v
+
+# See merged branches
+git branch --merged
+
+# See unmerged branches
+git branch --no-merged

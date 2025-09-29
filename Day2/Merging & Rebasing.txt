@@ -1,0 +1,27 @@
+Merging & Rebasing
+# Merge another branch into the current branch
+git merge <branch_name>
+
+# Rebase current branch onto another
+git rebase <branch_name>
+
+# Abort a merge or rebase if conflicts happen
+git merge --abort
+git rebase --abort
+=========================
+fetch-->
+git fetch → only downloads remote updates (safe, no changes to your files).
+
+git pull → does git fetch + automatically merges (or rebases) the changes into your current branch.
+
+git fetch <remote> <branch>
+git fetch
+git fetch origin main
+
+git fetch --all
+#Removes local references to branches that no longer exist on the remote.
+git fetch --prune
+
+
+
+
